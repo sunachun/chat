@@ -3,7 +3,6 @@ import 'package:chat/widgets/chat/new_message.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ChatScreen extends StatefulWidget {
   @override
@@ -29,6 +28,7 @@ class _ChatScreenState extends State<ChatScreen> {
         return;
       },
     );
+    fbm.subscribeToTopic('chat');
     super.initState();
   }
 
